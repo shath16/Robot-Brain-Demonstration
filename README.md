@@ -104,6 +104,3 @@ python robot.py
 
 ---
 
-
-
-👉 *“add the diagram”*.
