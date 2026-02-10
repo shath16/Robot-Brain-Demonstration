@@ -1,61 +1,109 @@
-# 🤖 AI Robot Brain Simulator (Simulated Sensor Fusion with YOLO)
+# 🤖 AI Robot Brain Simulator
+
+### Simulated Perception Pipeline with YOLO and Sensor Fusion
+
+---
 
 ## 📖 Overview
 
-This project implements a simulated autonomous robot decision system that demonstrates how AI vision and sensor data can be combined to guide robot navigation.
+This project implements a simulated autonomous robot decision system that demonstrates how AI perception and sensor data can be combined to guide navigation behaviour.
 
-The system simulates a robot's perception pipeline by integrating:
+The system models a **simulated perception pipeline**, inspired by real robotics architectures, where multiple sensor inputs are processed and prioritised to produce safe movement decisions.
 
-* Simulated YOLO-based object detection
-* Simulated ultrasonic distance sensing
-* Rule-based decision logic
-
-Instead of using real hardware or live camera input, predefined scenarios are used to emulate environmental conditions, allowing safe testing and development of robot navigation behaviour.
+Rather than using real hardware or live camera feeds, predefined scenarios simulate environmental conditions, allowing controlled testing and development of robot decision logic.
 
 ---
 
 ## 🧠 Key Concepts
 
-* Simulated AI perception using YOLO framework structure
-* Sensor fusion principles (vision + distance sensors)
-* Priority-based safety decision making
-* Autonomous navigation logic design
-* Robotics control architecture simulation
+* Simulated perception pipeline
+* AI vision framework integration (Ultralytics YOLO)
+* Sensor fusion principles
+* Rule-based autonomous decision making
+* Robotics navigation logic
+* Safety-priority control systems
 
 ---
 
-## ⚙️ How It Works
+## ⚙️ Architecture
 
-The robot processes simulated sensor data through a decision pipeline:
+The system follows a simplified robotics pipeline:
 
-1️⃣ **Ultrasonic Safety Check**
+```
+Simulated Sensors → Perception Layer → Decision Logic → Robot Action
+```
 
-* Emergency stop triggered if an object is too close.
+### 1️⃣ Perception Layer (Simulated)
 
-2️⃣ **Vision-Based Analysis**
+* Simulates YOLO-based object detection results.
+* Objects include position and distance information.
+* Models how a robot would interpret camera-based AI detections.
 
-* Simulated object detection identifies obstacles and positions.
+### 2️⃣ Ultrasonic Sensor Simulation
 
-3️⃣ **Decision Layer**
+* Provides distance measurements.
+* Used as a safety override mechanism.
 
-* Move forward when path is clear.
-* Stop and turn when obstacles appear in front.
-* Emergency stop when safety threshold is exceeded.
+### 3️⃣ Decision Logic
+
+Priority-based behaviour:
+
+* 🚨 Emergency stop when ultrasonic distance is below safety threshold.
+* 🛑 Stop and turn when obstacle detected in front path.
+* ✅ Move forward when path is clear.
 
 ---
 
-## 🎓 Purpose
+## 💻 Example Output
 
-This project demonstrates foundational robotics and AI navigation concepts, focusing on how autonomous systems integrate multiple sensor inputs to make safe movement decisions.
+```
+SCENARIO: Chair blocking path
+ROBOT'S VISION:
+• chair detected at center (15cm away)
+
+ULTRASONIC SENSOR: 18cm
+
+ROBOT ACTION: EMERGENCY STOP and TURN LEFT
+```
+
+---
+
+## 🎓 Learning Objectives
+
+* Understanding perception pipelines in robotics
+* Applying sensor fusion concepts
+* Designing decision-making systems
+* Structuring modular Python robotics code
+* Preparing for real-world autonomous navigation systems
 
 ---
 
 ## 🚀 Future Improvements
 
-* Real-time camera integration using YOLO
-* Real ultrasonic sensor hardware
-* Motor control and physical robot movement
-* ROS-style modular robot architecture
+* Real-time camera integration with YOLO detection
+* Hardware implementation (Raspberry Pi / Arduino)
+* Motor control and physical robot navigation
+* ROS-style architecture
+* Machine learning-based path planning
+
+---
+
+## 🛠️ Installation
+
+```bash
+pip install ultralytics
+```
+
+---
+
+## ▶️ Run
+
+```bash
+python robot.py
+```
+
+---
 
 
-👉 *“make it look pro”*.
+
+👉 *“add the diagram”*.
